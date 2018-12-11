@@ -1,7 +1,6 @@
 <template>
   <div>
-    <div class="home" @click="handleHref">Home</div>
-    <router-link to="/list">列表页</router-link>
+    Hello word
   </div>
 </template>
 
@@ -12,7 +11,5 @@ export default {
 </script>
 
 <style scoped>
-.home {
-  font-size: 50px;
-}
+
 </style>
