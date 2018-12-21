@@ -3,7 +3,7 @@
     <div class="recommend-title">热销推荐</div>
     <ul>
       <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
-        <img class="item-img" :src="item.imgUrl" :alt="item.desc">
+        <img class="item-img" v-lazy="item.imgUrl" :alt="item.desc">
         <div class="item-info">
           <p class="item-tittle">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>

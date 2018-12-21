@@ -4,7 +4,7 @@
     <ul>
       <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
         <div class="item-img-wrapper">
-           <img class="item-img" :src="item.imgUrl" :alt="item.desc">
+           <img class="item-img" v-lazy="item.imgUrl" :alt="item.desc">
         </div>
         <div class="item-info">
           <p class="item-tittle">{{item.title}}</p>
