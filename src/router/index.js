@@ -1,8 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/pages/home/Home'
 
 Vue.use(Router)
+
+// 路由懒加载
+const Home = (resolve) => {
+  import('@/pages/home/Home').then((module) => {
+    resolve(module)
+  })
+}
 
 export default new Router({
   routes: [
