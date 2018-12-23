@@ -10,12 +10,23 @@ const Home = (resolve) => {
   })
 }
 
+const City = (resolve) => {
+  import('@/pages/city/City').then((module) => {
+    resolve(module)
+  })
+}
+
 export default new Router({
   routes: [
     {
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/city',
+      name: 'City',
+      component: City
     }
   ]
 })
