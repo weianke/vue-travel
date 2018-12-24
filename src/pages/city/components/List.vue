@@ -128,7 +128,7 @@ export default {
     &:before
       border-color: #ccc
   .title
-    line-height: 0.444rem
+    line-height: 0.54rem
     background: #eee
     padding-left: 0.2rem
     color: #666
