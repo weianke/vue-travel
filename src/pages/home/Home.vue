@@ -14,7 +14,7 @@ import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/Icons'
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
-import indexList from '@/axios/index'
+import Axios from '@/axios/index'
 
 export default {
   name: 'Home',
@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     getHomeInfo () {
-      indexList('/index').then((res) => {
+      Axios('/index').then((res) => {
         if (res.ret && res.data) {
           this.city = res.data.city
           this.swiperList = res.data.swiperList
