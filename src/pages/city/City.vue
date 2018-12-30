@@ -24,8 +24,14 @@ export default {
   data () {
     return {
       cities: {},
-      hotCities: []
+      hotCities: [],
+      data: ''
     }
+  },
+  created () {
+    this.bus.$on('city', (cityMsg) => {
+      this.data = cityMsg
+    })
   },
   mounted () {
     this.getCityInfo()
@@ -36,7 +42,7 @@ export default {
         if (res.ret && res.data) {
           this.cities = res.data.cities
           this.hotCities = res.data.hotCities
-          console.log(this.cities)
+          // console.log(this.cities)
         }
       })
     }

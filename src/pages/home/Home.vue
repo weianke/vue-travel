@@ -49,6 +49,9 @@ export default {
         }
       })
     }
+  },
+  destroyed () {
+    this.bus.$emit('city', this.city)
   }
 }
 </script>
