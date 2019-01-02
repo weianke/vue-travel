@@ -42,7 +42,6 @@ export default {
         if (res.ret && res.data) {
           this.cities = res.data.cities
           this.hotCities = res.data.hotCities
-          // console.log(this.cities)
         }
       })
     },
