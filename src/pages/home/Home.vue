@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Home-header :city="city"></Home-header>
+    <Home-header></Home-header>
     <home-swiper :list="swiperList"></home-swiper>
     <home-icons :list="iconList"></home-icons>
     <home-recommend :list="recommendList"></home-recommend>
@@ -27,7 +27,6 @@ export default {
   },
   data () {
     return {
-      city: '',
       swiperList: [],
       iconList: [],
       recommendList: [],
@@ -41,7 +40,6 @@ export default {
     getHomeInfo () {
       Axios('/index').then((res) => {
         if (res.ret && res.data) {
-          this.city = res.data.city
           this.swiperList = res.data.swiperList
           this.iconList = res.data.iconList
           this.recommendList = res.data.recommendList
@@ -49,9 +47,6 @@ export default {
         }
       })
     }
-  },
-  destroyed () {
-    this.bus.$emit('city', this.city)
   }
 }
 </script>

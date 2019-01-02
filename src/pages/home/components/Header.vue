@@ -9,7 +9,7 @@
     </div>
     <router-link to="/city" tag="div">
       <div class="header-right">
-        {{city}}
+        {{this.$store.state.city}}
         <span class="iconfont arrow-icon">&#xe64a;</span>
       </div>
     </router-link>
@@ -19,9 +19,6 @@
 <script  type='text/ecmascript-6'>
 export default {
   name: 'Header',
-  props: {
-    city: String
-  },
   methods: {
     handleCity () {
       this.$router.push('/city')
