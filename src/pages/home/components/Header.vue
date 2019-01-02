@@ -3,7 +3,7 @@
     <div class="header-left">
       <div class="iconfont back-icon">&#xe624;</div>
     </div>
-    <div class="header-input">
+    <div class="header-input" @click="handleCity">
       <span class="iconfont">&#xe632;</span>
       输入城市/景点/游玩主题
     </div>
@@ -21,6 +21,11 @@ export default {
   name: 'Header',
   props: {
     city: String
+  },
+  methods: {
+    handleCity () {
+      this.$router.push('/city')
+    }
   }
 }
 </script>

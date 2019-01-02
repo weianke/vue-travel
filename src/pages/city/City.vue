@@ -28,11 +28,6 @@ export default {
       letter: ''
     }
   },
-  created () {
-    this.bus.$on('city', (cityMsg) => {
-      this.data = cityMsg
-    })
-  },
   mounted () {
     this.getCityInfo()
   },
