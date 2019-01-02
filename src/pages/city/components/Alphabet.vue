@@ -42,6 +42,7 @@ export default {
     },
     handleTouchMove (e) {
       if (this.touchStatus) {
+        // 节流函数 节省频繁点击造成的函数多次调用
         if (this.timer) {
           clearTimeout(this.timer)
         }
