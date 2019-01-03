@@ -44,7 +44,7 @@ export default {
     handleCityClick (city) {
       // actions映射提交
       this.changeCity(city)
-      // mutations映射this.add()提交
+      // mutations映射this.add()提交，两种方法都可以提交，只是写法不同
       // this.add(city)
       this.$router.push('/')
     },
