@@ -5,7 +5,7 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">{{this.$store.state.city}}</div>
+            <div class="button">{{this.getChangeCity}}</div>
           </div>
         </div>
       </div>
@@ -28,6 +28,7 @@
 </template>
 
 <script  type='text/ecmascript-6'>
+import { mapGetters, mapState, mapActions, mapMutations } from 'vuex'
 import BScroll from 'better-scroll'
 export default {
   name: 'CityList',
@@ -41,9 +42,18 @@ export default {
   },
   methods: {
     handleCityClick (city) {
-      this.$store.dispatch('changeCity', city)
+      // actions映射提交
+      this.changeCity(city)
+      // mutations映射this.add()提交
+      // this.add(city)
       this.$router.push('/')
-    }
+    },
+    ...mapActions([
+      'changeCity'
+    ]),
+    ...mapMutations({
+      add: 'changeCity'
+    })
   },
   watch: {
     letter () {
@@ -52,6 +62,14 @@ export default {
         this.scroll.scrollToElement(element)
       }
     }
+  },
+  computed: {
+    ...mapGetters([
+      'getChangeCity'
+    ]),
+    ...mapState({
+      newCity: 'city'
+    })
   }
 }
 </script>
