@@ -26,9 +26,6 @@ export default {
     }
   },
   computed: {
-    changeCity () {
-      return this.changeCity
-    },
     ...mapGetters([
       'getChangeCity'
     ]),
