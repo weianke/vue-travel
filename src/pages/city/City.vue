@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     getCityInfo () {
-      Axios('/city').then((res) => {
+      Axios.ajax('/city').then((res) => {
         if (res.ret && res.data) {
           this.cities = res.data.cities
           this.hotCities = res.data.hotCities

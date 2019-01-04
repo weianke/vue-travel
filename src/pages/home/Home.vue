@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     getHomeInfo () {
-      Axios('/index?city=' + this.city).then((res) => {
+      Axios.ajax('/index?city=' + this.city).then((res) => {
         if (res.ret && res.data) {
           this.swiperList = res.data.swiperList
           this.iconList = res.data.iconList
