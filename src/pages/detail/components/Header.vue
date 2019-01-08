@@ -40,6 +40,8 @@ export default {
     }
   },
   activated () {
+    // 页面显示需要重置fied区域
+    this.showAbs = true
     // 因为使用keep-alive缓存，页面显示就会触发这个钩子函数
     window.addEventListener('scroll', this.handleScroll)
   },
@@ -70,7 +72,7 @@ export default {
     top: 0
     left: 0
     right: 0
-    z-index: 20
+    z-index: 99
     height: $headerHeight
     line-height: $headerHeight
     text-align: center
