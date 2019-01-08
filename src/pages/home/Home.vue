@@ -1,12 +1,10 @@
 <template>
-  <div class="list" ref="wrapper">
-     <div class="wrapper">
-        <Home-header></Home-header>
-        <home-swiper :list="swiperList"></home-swiper>
-        <home-icons :list="iconList"></home-icons>
-        <home-recommend :list="recommendList"></home-recommend>
-        <home-weekend :list="weekendList"></home-weekend>
-     </div>
+  <div class="list">
+    <Home-header></Home-header>
+    <home-swiper :list="swiperList"></home-swiper>
+    <home-icons :list="iconList"></home-icons>
+    <home-recommend :list="recommendList"></home-recommend>
+    <home-weekend :list="weekendList"></home-weekend>
   </div>
 </template>
 
@@ -18,7 +16,6 @@ import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
 import Axios from '@/axios/index'
 import { mapState } from 'vuex'
-import BScroll from 'better-scroll'
 export default {
   name: 'Home',
   components: {
@@ -40,7 +37,6 @@ export default {
   mounted () {
     this.lastCity = this.city
     this.getHomeInfo()
-    this.scroll = new BScroll(this.$refs.wrapper)
   },
   methods: {
     getHomeInfo () {
@@ -70,7 +66,5 @@ export default {
 </script>
 
 <style scoped lang='stylus' rel='stylesheet/stylus'>
-  .list
-    overflow: hidden
-    height: 100vh
+
 </style>

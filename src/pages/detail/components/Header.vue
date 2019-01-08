@@ -26,7 +26,7 @@ export default {
   methods: {
     handleScroll () {
       // document.documentElement 代表html节点
-      const top = document.documentElement.scrollTop
+      const top = document.documentElement.scrollTop || document.body.scrollTop
       if (top > 60) {
         let opacity = top / 140
         opacity = opacity > 1 ? 1 : opacity
