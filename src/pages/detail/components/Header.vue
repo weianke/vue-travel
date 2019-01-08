@@ -42,6 +42,10 @@ export default {
   activated () {
     // 因为使用keep-alive缓存，页面显示就会触发这个钩子函数
     window.addEventListener('scroll', this.handleScroll)
+  },
+  deactivated () {
+    // 页面移除后，解绑全局scroll事件，以免引起其他组件的触发
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
