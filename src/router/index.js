@@ -27,17 +27,29 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+      beforeEnter (to, from, next) {
+        document.title = '去哪儿旅行'
+        next()
+      }
     },
     {
       path: '/city',
       name: 'City',
-      component: City
+      component: City,
+      beforeEnter (to, from, next) {
+        document.title = '城市选择服务'
+        next()
+      }
     },
     {
       path: '/detail/:id',
       name: 'Detail',
-      component: Detail
+      component: Detail,
+      beforeEnter (to, from, next) {
+        document.title = '旅行详情'
+        next()
+      }
     }
   ],
   scrollBehavior (to, from, savedPosition) {

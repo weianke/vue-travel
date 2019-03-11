@@ -2,8 +2,11 @@
   <div>
     <city-header></city-header>
     <city-search :cities="cities"></city-search>
-    <city-list :cities="cities" :hot="hotCities" :letter="letter"></city-list>
-    <city-alphabet :cities="cities" @change="handleLetterChange"></city-alphabet>
+    <city-list :cities="cities"
+               :hot="hotCities"
+               :letter="letter"></city-list>
+    <city-alphabet :cities="cities"
+                   @change="handleLetterChange"></city-alphabet>
   </div>
 </template>
 
@@ -25,8 +28,13 @@ export default {
     return {
       cities: {},
       hotCities: [],
-      letter: ''
+      letter: '',
+      test: '你好'
     }
+  },
+  beforeRouteEnter (to, from, next) {
+    document.title = '城市选择服务'
+    next()
   },
   mounted () {
     this.getCityInfo()
@@ -48,5 +56,4 @@ export default {
 </script>
 
 <style scoped lang='stylus' rel='stylesheet/stylus'>
-
 </style>
