@@ -11,6 +11,7 @@
                     :playsinline="true"
                     :options="playerOptions"
                     @play="onPlayerPlay($event)"
+                    @ended="onPlayerEnded($event)"
                     @pause="onPlayerPause($event)">
       </video-player>
     </div>
@@ -129,6 +130,9 @@ export default {
     },
     onPlayerPause (player) {
       // console.log('player pause!', player)
+    },
+    onPlayerEnded (e) {
+      console.log('end',e);
     },
     // ...player event
 
