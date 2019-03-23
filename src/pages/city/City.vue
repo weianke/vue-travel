@@ -1,6 +1,6 @@
 <template>
   <div>
-    <city-header></city-header>
+    <city-header :tittle.sync="tittle"></city-header>
     <city-search :cities="cities"></city-search>
     <city-list :cities="cities"
                :hot="hotCities"
@@ -29,7 +29,8 @@ export default {
       cities: {},
       hotCities: [],
       letter: '',
-      test: '你好'
+      test: '你好',
+      tittle: '111'
     }
   },
   beforeRouteEnter (to, from, next) {
