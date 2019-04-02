@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script  type='text/ecmascript-6'>
+<script  type='texçt/ecmascript-6'>
 export default {
   name: 'CityHeader',
   props: {
@@ -14,7 +14,7 @@ export default {
   methods: {
     handleBack () {
       this.$router.push('/')
-      // 双向数据绑定 通过语法糖实现子级传递 父级通过 .sync 实现自动更新子级传递的数据
+      // 双向数据绑定 通过语法糖实现子级传递props 父级通过 .sync 实现自动更新父子级传递的数据
       this.$emit('update:tittle', 'hello')
     }
   }
