@@ -1,5 +1,6 @@
 <template>
   <div class="list">
+    djfieifewifjwei测试
     <Home-header></Home-header>
     <home-swiper :list="swiperList"></home-swiper>
     <home-icons :list="iconList"></home-icons>
