@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "author": "anke <245783065@qq.com>",
+  "homepage": "http://weianke.github.io/vue-travel/",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
