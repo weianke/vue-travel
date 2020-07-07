@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     getHomeInfo () {
-      Axios.ajax('./static/mock/index.json').then((res) => {
+      Axios.ajax('/mock/index.json').then((res) => {
         if (res.ret && res.data) {
           this.swiperList = res.data.swiperList
           this.iconList = res.data.iconList
