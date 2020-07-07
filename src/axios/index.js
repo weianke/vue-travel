@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export default class Axios {
   static ajax (url, options) {
-    let baseUrl = process.env.NODE_ENV === 'production' ? '../../static' : 'static/'
+    let baseUrl = 'static/'
     return axios({
       url: url,
       method: 'get',
