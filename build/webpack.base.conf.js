@@ -3,6 +3,8 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { SkeletonPlugin } = require('page-skeleton-webpack-plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -31,6 +33,16 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+       // Your HtmlWebpackPlugin config
+    }),
+    new SkeletonPlugin({
+      pathname: path.resolve(__dirname, '../shell'), // 用来存储 shell 文件的地址
+      staticDir: path.resolve(__dirname, '../dist'), // 最好和 `output.path` 相同
+      routes: ['/', '/city'], // 将需要生成骨架屏的路由添加到数组中
+    })
+  ],
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {

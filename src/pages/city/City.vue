@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     getCityInfo () {
-      Axios.ajax('/city').then((res) => {
+      Axios.ajax('./static/mock/city.json').then((res) => {
         if (res.ret && res.data) {
           this.cities = res.data.cities
           this.hotCities = res.data.hotCities

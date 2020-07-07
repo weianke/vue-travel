@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     getHomeInfo () {
-      Axios.ajax('/index?city=' + this.city).then((res) => {
+      Axios.ajax('./static/mock/index.json').then((res) => {
         if (res.ret && res.data) {
           this.swiperList = res.data.swiperList
           this.iconList = res.data.iconList
